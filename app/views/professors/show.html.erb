@@ -4,6 +4,27 @@
   <strong>Name:</strong>
   <%= @professor.name %>
 </p>
+<table>
+  <thead>
+    <tr>
+      <th>Professor Name</th>
+      <th>Course Name</th>
+      <th>Room</th>
+      <th>Semester</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @professor.sections.each do |section| %>
+    <tr>
+        <td><%= section.professor.name %></td>
+        <td><%= section.course.name %></td>
+        <td><%= section.room %></td>
+        <td><%= section.semester %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>
