@@ -1,4 +1,6 @@
 class ProfessorsController < ApplicationController
+  #Ensure that the users are authenticated before allowing access to the page
+  before_filter :authenticate_user!
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
 
   # GET /professors

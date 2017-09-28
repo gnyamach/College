@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
+  #Ensure that the users are authenticated before allowing access to the page
+  before_filter :authenticate_user!
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
   # GET /courses
   # GET /courses.json
   def index
