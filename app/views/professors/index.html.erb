@@ -2,6 +2,12 @@
 
 <h1>Professors</h1>
 
+<%= form_tag(professors_path, method: :get) do %>
+  <%= text_field_tag :enteredsearch %>
+  <%= submit_tag 'Search' %>
+<% end %>
+<br>
+<br>
 <table>
   <thead>
     <tr>
