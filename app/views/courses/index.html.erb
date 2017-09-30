@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
+<br>
+  <p align = "center"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></td>
 
 <table>
   <thead>
@@ -16,10 +18,11 @@
         <td><%= course.name %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>

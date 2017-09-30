@@ -2,6 +2,9 @@
 
 <h1>Professors</h1>
 
+<br>
+  <p align = "center"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></td>
+
 <%= form_tag(professors_path, method: :get) do %>
   <%= text_field_tag :enteredsearch %>
   <%= submit_tag 'Search' %>
