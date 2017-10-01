@@ -5,6 +5,13 @@
 <br>
   <p align = "center"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></td>
 
+<%= form_tag(sections_path, method: :get) do %>
+  <%= text_field_tag :sectionsearch, params[:sectionsearch] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+<br>
+<br>
+
 <table>
   <thead>
     <tr>

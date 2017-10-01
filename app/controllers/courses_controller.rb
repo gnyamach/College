@@ -2,10 +2,16 @@ class CoursesController < ApplicationController
   #Ensure that the users are authenticated before allowing access to the page
   before_filter :authenticate_user!
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    #@courses = Course.all
+    @courses = if params[:coursesearch]
+      Course.where('name Like ?',"%#{params[:coursesearch]}%")
+    else
+      Course.all
+    end
   end
 
   # GET /courses/1
@@ -70,6 +76,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name)
+      params.require(:course).permit(:name, :coursesearch)
     end
 end

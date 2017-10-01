@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
+  <p align = "center"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
+
+<%= form_tag(courses_path, method: :get) do %>
+  <%= text_field_tag :coursesearch, params[:coursesearch] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 <br>
-  <p align = "center"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></td>
+<br>
 
 <table>
   <thead>

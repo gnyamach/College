@@ -6,7 +6,15 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    #@sections = Section.all
+    @sections = if params[:sectionsearch]
+      #Section.where('name Like ?',"%#{params[:sectionsearch]}%")
+      key = "%#{params[:sectionsearch]}%"
+      Section.where('name Like :search or semester Like :search or
+        room Like :search', search: key)
+    else
+      Section.all
+    end
   end
 
   # GET /sections/1
@@ -71,6 +79,6 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:name, :room, :semester, :course_id, :professor_id)
+      params.require(:section).permit(:name, :room, :semester, :course_id, :professor_id, :sectionsearch)
     end
 end
