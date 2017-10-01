@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   background-image: url("background4");
+   color: green;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 20px;
+   padding: 15px;
+ }
+ h1 {
+   text-align: center;
+   text-shadow: 3px 2px black;
+   color: green;
+   font-size: 40px;
+ }
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+    text-align: right;
+}
+table, th, td {
+   border: 1px solid black;
+   font-size: 15px;
+}
+th {
+    height: 50px;
+}
