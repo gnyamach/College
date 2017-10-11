@@ -11,6 +11,7 @@
       <th>Room Number</th>
       <th>Semester</th>
       <th>Section Number</th>
+      <th>Enrolled Student(s)</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -22,6 +23,18 @@
         <td><%= section.room %></td>
         <td><%= section.semester %></td>
         <td><%= section.name %></td>
+        <td>Student Name(s)</td>
+        <tr>
+        <% section.enrollments.each do |enrol|%>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> <%= enrol.student.name %></td>
+        </tr>
+        <% end %>
+      </tr>
     </tr>
     <% end %>
   </tbody>
