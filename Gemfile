@@ -51,4 +51,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # adding Devise to allow authentication on the app
 gem 'devise'
 
-#gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
+#support for boostrap and dynamic menus and navigation toolbar
+gem 'bootstrap-sass', '>= 3.3.7'
+
+#Install the version of bcrypt from the repo.
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
